@@ -11,34 +11,32 @@ public class CasosDePrueba extends Configuraciones {
         Configuraciones.inicializar();
     }
 
-    @Test
-    public void testCase1() {
-        // Abrir la página de inicio
-        Configuraciones.driver.get("https://www.ucu.edu.uy/");
-
-        // Crear una instancia de la página
-        HomeUCU paginaInicio = new HomeUCU(Configuraciones.driver);
-        
-        // Realizar acciones en la página
-        paginaInicio.clickALoLoco();
-    }
 
         // Añadir aserciones según sea necesario
         //assertTrue(stringActual.contains(textoEsperado));
         
         //Otro tipo de assertions sin usar Selenium Webdriver
 
-         @Test
-    public void testCase2() {
-        // Abrir la página de inicio
-        Configuraciones.driver.get("https://www.ucu.edu.uy/");
-
-        // Crear una instancia de la página
-        HomeUCU paginaInicio = new HomeUCU(Configuraciones.driver);
+    @Test
+    public void experienciaUcuTest(){
         
-        // Realizar acciones en la página
-        paginaInicio.clickALoLoco();
+        //Abro pág en ExperienciaUCU
+        Configuraciones.driver.get("https://www.ucu.edu.uy/categoria/Asuntos-Estudiantiles-369/");
+        
+        ExperienciaUCU experienciaPage = new ExperienciaUCU(Configuraciones.driver);
 
+        experienciaPage.openActividadesAccordions();
+        experienciaPage.closeActividadesAccordions();
+    }
+    @Test
+    public void investigacionUcuTest(){
+        
+        Configuraciones.driver.get("https://www.ucu.edu.uy/categoria/Investigacion-366/");
+        
+        InvestigacionUCU investigacionPage = new InvestigacionUCU(Configuraciones.driver);
+
+        investigacionPage.meetInvestigadores();
+        investigacionPage.checkInspirationalQuotesOrSomethingLol();
     }
 
      @AfterEach
