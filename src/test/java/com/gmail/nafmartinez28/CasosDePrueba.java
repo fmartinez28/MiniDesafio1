@@ -38,6 +38,16 @@ public class CasosDePrueba extends Configuraciones {
         investigacionPage.meetInvestigadores();
         investigacionPage.checkInspirationalQuotesOrSomethingLol();
     }
+    @Test
+    public void internacionalesUcuTest(){
+        
+        Configuraciones.driver.get("https://www.ucu.edu.uy/categoria/Internacionales-321");
+        
+        InternacionalesUCU internacionalesPage = new InternacionalesUCU(Configuraciones.driver);
+
+        internacionalesPage.openAcordeones();
+        internacionalesPage.changeLocationSalto();
+    }
 
      @AfterEach
     public void tearDown() {
